@@ -4,7 +4,7 @@
 `git clone git@github.com:dwheelerau/dotvim.git`  
 
 Symlink your vimrc to this repo  
-`ln -s vimrc ~/.vimrc`  
+`ln -s /home/dwheeler/dotvim/vimrc ~/.vimrc`  
 
 ### Install plugins using plug  
 Follow the instructions at this webpage:  
@@ -21,3 +21,6 @@ see: https://github.com/Valloric/YouCompleteMe
 `./install.py`  
 
 This should compile.
+
+### Then clone the dottmux repo to get tmux integration working  
+https://github.com/dwheelerau/dottmux  
