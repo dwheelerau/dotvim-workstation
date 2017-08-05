@@ -7,6 +7,7 @@ Symlink your vimrc to this repo
 `ln -s vimrc ~/.vimrc`  
 
 ### Install plugins using plug  
+Follow the instructions at this webpage:  
 https://github.com/junegunn/vim-plug  
 
 Open vim and use `:PluginInstall`  
