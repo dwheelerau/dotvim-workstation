@@ -1,7 +1,8 @@
 ## My vimrc file
 ### Instuctions  
-`mkdir -p ~/dotvim cd ~/dotvim`  
-`git clone xxxxx`  
+`mkdir -p ~/dotvim && cd ~/dotvim`  
+`git remote add origin git@github.com:dwheelerau/dotvim.git`  
+`git push -u origin master`  
 
 `ln -s vimrc ~/.vimrc`  
 
