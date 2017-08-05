@@ -12,4 +12,9 @@ https://github.com/junegunn/vim-plug
 
 Open vim and use `:PluginInstall`  
 
-Some of the plugins may require compilation.  
+Some of the plugins may require compilation, namely YCM.  
+see: https://github.com/Valloric/YouCompleteMe  
+`cd ~/.vim/plugged/YouCompleteMe/`  
+`./install.py`  
+
+This should compile.

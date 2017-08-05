@@ -2,18 +2,20 @@ set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"set rtp+=~/.vim/bundle/Vundle.vim
+"call vundle#begin()
+call plug#begin('~/.vim/plugged')
+
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+Plug 'VundleVim/Vundle.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Git plugin not hosted on GitHub
 " Plugin 'git://git.wincent.com/command-t.git'
@@ -23,50 +25,52 @@ Plugin 'tpope/vim-fugitive'
 " Pass the path to set the runtimepath properly.
 
 " ctrlP to super search https://github.com/kien/ctrlp.vim
-Plugin 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
-Plugin 'ascenator/L9', {'name': 'newL9'}
+Plug 'ascenator/L9', {'name': 'newL9'}
 
 " color schemes
-Plugin 'jnurmine/Zenburn'
-Plugin 'altercation/vim-colors-solarized'
+Plug 'jnurmine/Zenburn'
+Plug 'altercation/vim-colors-solarized'
 "
 " " nerd tree for file lookup
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
 " powerline for status bar info
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 
 " " plugin for latex use :LLPstartPreview to view in mupdf
 " Plugin 'xuhdev/vim-latex-live-preview'
-Plugin 'vim-latex/vim-latex'
+Plug 'vim-latex/vim-latex'
 
 " youcomplete me plugin
-Plugin 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe'
 
 " " smart indentation for python
-Plugin 'vim-scripts/indentpython.vim'
+Plug 'vim-scripts/indentpython.vim'
 
 " " simple fold
-Plugin 'tmhedberg/SimpylFold'
+Plug 'tmhedberg/SimpylFold'
 
 " " sytax highlighting
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic'
 
 " " PEP8
-Plugin 'nvie/vim-flake8'
+Plug 'nvie/vim-flake8'
 
 " vim like navigation with tmux
-Plugin 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 
 " bash commands in vim using tmux
-Plugin 'benmills/vimux'
+Plug 'benmills/vimux'
 
 " All of your Plugins must be added before the following line
-call vundle#end()            " required
+" call vundle#end()            " required
+call plug#end()            " required
+
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 filetype plugin on
