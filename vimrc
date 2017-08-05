@@ -1,0 +1,247 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Git plugin not hosted on GitHub
+" Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+
+" ctrlP to super search https://github.com/kien/ctrlp.vim
+Plugin 'ctrlpvim/ctrlp.vim'
+
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+Plugin 'ascenator/L9', {'name': 'newL9'}
+
+" color schemes
+Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
+"
+" " nerd tree for file lookup
+Plugin 'scrooloose/nerdtree'
+
+" powerline for status bar info
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+
+" " plugin for latex use :LLPstartPreview to view in mupdf
+" Plugin 'xuhdev/vim-latex-live-preview'
+Plugin 'vim-latex/vim-latex'
+
+" youcomplete me plugin
+Plugin 'Valloric/YouCompleteMe'
+
+" " smart indentation for python
+Plugin 'vim-scripts/indentpython.vim'
+
+" " simple fold
+Plugin 'tmhedberg/SimpylFold'
+
+" " sytax highlighting
+Plugin 'scrooloose/syntastic'
+
+" " PEP8
+Plugin 'nvie/vim-flake8'
+
+" vim like navigation with tmux
+Plugin 'christoomey/vim-tmux-navigator'
+
+" bash commands in vim using tmux
+Plugin 'benmills/vimux'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+" Split layouts for muti files, use :sv <filename> or :vs <filename>
+set splitbelow
+set splitright
+
+" " bind Ctrl+<movement> keys to move around the windows, instead of using
+" " Ctrl+w + <movement>
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
+map <c-h> <c-w>h
+
+" " remap leader
+let mapleader=","
+
+" " Enable folding
+set foldmethod=indent
+set foldlevel=99
+
+" " Enable folding with the spacebar
+nnoremap <space> za
+
+" " show docstring for folded code
+let g:SimpylFold_docstring_preview=1
+
+" " UTF8 support
+set encoding=utf-8
+
+" " youcomplete me, close win, and shortcut for goto definition
+" let g:ycm_autoclose_preview_window_after_completion=1
+" map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+"
+let python_highlight_all=1
+syntax on
+set noswapfile
+
+" " color scheme for solarized (not used)
+" " if has('gui_running')
+" "   set background=dark
+" "   colorscheme solarized
+" " else
+" "   colorscheme zenburn
+" " endif
+"
+" " press F5 for darky/light theme
+call togglebg#map("<F5>")
+"
+" " get nerdtree to ignore pyc files
+let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
+"
+" " use system clipboard
+set clipboard=unnamed
+
+" " Mouse and backspace
+set mouse=a  " on OSX press ALT and click
+set bs=2     " make backspace behave like normal again
+"
+" " Bind nohl
+" " Removes highlight of your last search
+" " ``<C>`` stands for ``CTRL`` and therefore ``<C-n>`` stands for ``CTRL+n``
+noremap <C-n> :nohl<CR>
+vnoremap <C-n> :nohl<CR>
+inoremap <C-n> :nohl<CR>
+
+" " Quicksave command
+noremap <C-Z> :update<CR>
+vnoremap <C-Z> <C-C>:update<CR>
+inoremap <C-Z> <C-O>:update<CR>
+
+" Write all buffers before navigating from Vim to tmux pane
+let g:tmux_navigator_save_on_switch = 2
+
+" " Prompt for a command to run bash commands
+map <Leader>vp :VimuxPromptCommand<CR>
+
+" Inspect runner pane
+map <Leader>vi :VimuxInspectRunner<CR>
+
+" " Quick quit command
+noremap <Leader>e :quit<CR>  " Quit current window
+noremap <Leader>E :qa!<CR>   " Quit all windows
+"
+" " easier moving between tabs ie ':tabnew' creates new tab like chrome
+" " would be comma ie ,nm the nm move left right
+map <Leader>n <esc>:tabprevious<CR>
+map <Leader>m <esc>:tabnext<CR>
+
+" " easier moving of code blocks
+" " Try to go into visual mode (v), thenselect several lines of code here and
+" " then press ``>`` several times.
+vnoremap < <gv  " better indentation
+vnoremap > >gv  " better indentation
+"
+" " Show whitespace
+" " MUST be inserted BEFORE the colorscheme command
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+au InsertLeave * match ExtraWhitespace /\s\+$/
+"
+" " color
+" set t_Co=256
+" color wombat256mod
+colorscheme elflord
+
+" " Showing line numbers and length
+set number  " show line numbers
+set tw=79   " width of document (used by gd)
+set nowrap  " don't automatically wrap on load
+set fo-=t   " don't automatically wrap text when typing
+set colorcolumn=80
+highlight ColorColumn ctermbg=233
+
+" " easier formatting of paragraphs
+vmap Q gq
+nmap Q gqap
+
+" " Useful settings
+set history=700
+set undolevels=700
+
+" " Real programmers don't use TABs but spaces
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+
+" " Use tab = 2 for html
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+
+" " Use tab = 2 for shell scripts
+autocmd FileType sh setlocal shiftwidth=2 tabstop=2
+
+" " Make search case insensitive
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+" " vim-latex
+let g:Tex_ViewRule_ps = 'mudpf'
+let g:tex_flavor='latex'
+
+" "vepreview_previewer = 'your_viewer' Settings for vim-powerline
+
+" " Lokaltog/vim-powerline.git
+set laststatus=2
+
+" " settings for syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+"
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" reduce space for syntastic error window
+let g:syntastic_loc_list_height=5
+
+" " ctrlp settings
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+"
+" " settings for nerdtree use Ctrl n
+map <C-n> :NERDTreeToggle<CR>
