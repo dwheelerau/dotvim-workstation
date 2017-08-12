@@ -13,7 +13,7 @@ but basically..
 `curl -fLo ~/.vim/autoload/plug.vim --create-dirs \`  
 `    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`  
 
-Open vim and use `:PluginInstall`  
+Open vim and use `:PlugInstall`  
 
 Some of the plugins may require compilation, namely YCM.  
 see: https://github.com/Valloric/YouCompleteMe  
