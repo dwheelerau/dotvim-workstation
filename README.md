@@ -1,7 +1,7 @@
 ## My vimrc file
 ### Instuctions  
 `mkdir -p ~/dotvim && cd ~/dotvim`  
-`git clone git@github.com:dwheelerau/dotvim.git`  
+`git clone https://github.com/dwheelerau/dotvim.git`  
 
 Symlink your vimrc to this repo  
 `ln -s /home/dwheeler/dotvim/vimrc ~/.vimrc`  
