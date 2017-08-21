@@ -63,5 +63,5 @@ Create `~/.tern-config` containing the following
 
 ```bash
 git clone https://github.com/dwheelerau/dottmux
-ln -s ~/dottmux/tmux.conf ~/.tmux.conf
+ln -s /home/dwheeler/dottmux/tmux.conf ~/.tmux.conf
 ```
