@@ -239,6 +239,11 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+" nodejs
+let g:syntastic_javascript_checkers = ['jslint']
+" python: sudo apt-get install pyflakes
+let g:syntastic_python_checkers=['pyflakes']
+
 " reduce space for syntastic error window
 let g:syntastic_loc_list_height=5
 

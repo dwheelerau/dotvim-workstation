@@ -24,3 +24,13 @@ This should compile.
 
 ### Then clone the dottmux repo to get tmux integration working  
 https://github.com/dwheelerau/dottmux  
+
+### Syntastic packages  
+```bash
+sudo apt-get install nodejs
+sudo apt-get install npm
+sudo apt-get install jslint
+sudo apt-get install gjslint
+sudo npm install -g jslint
+sudo apt-get install pyflakes
+```
