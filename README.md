@@ -30,9 +30,6 @@ cd ~/.vim/plugged/YouCompleteMe/
 ```
 This should compile.
 
-### Then clone the dottmux repo to get tmux integration working  
-https://github.com/dwheelerau/dottmux  
-
 ### Syntastic packages  
 ```bash
 sudo apt-get install nodejs
@@ -60,4 +57,11 @@ Create `~/.tern-config` containing the following
   ],
   "ecmaVersion": 6
 }
+```
+
+### Then clone the dottmux repo to get tmux integration working  
+
+```bash
+git clone https://github.com/dwheelerau/dottmux
+ln -s ~/dottmux/tmux.conf ~/.tmux.conf
 ```
