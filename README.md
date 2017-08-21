@@ -31,6 +31,11 @@ sudo apt-get install nodejs
 sudo apt-get install npm
 sudo apt-get install jslint
 sudo apt-get install gjslint
+# try jslint from command line
 sudo npm install -g jslint
+# if that does not work install the following
+sudo apt-get install nodejs-legacy
+
+# this is for python
 sudo apt-get install pyflakes
 ```
