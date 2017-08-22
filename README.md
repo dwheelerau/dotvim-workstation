@@ -30,15 +30,31 @@ cd ~/.vim/plugged/YouCompleteMe/
 ```
 This should compile.
 
-### Syntastic packages  
+### Syntastic support for jscript and python  
+*This is painful*, I needed up using eslint, but this req upgrade node.  
+ 
 ```bash
-sudo apt-get install nodejs
 sudo apt-get install npm
-# try jslint from command line
-sudo npm install -g jslint
-# if that does not work install the following
-sudo apt-get install nodejs-legacy
+sudo npm install n -g
+sudo n latest
+sudo npm install -g eslint
+sudo npm install -g eslint-config-google
+#then run and follow instructions, chose popular style (google) and json formt)
+sudo eslint --init
 
+#sudo apt-get install nodejs
+# try jslint from command line
+#sudo npm install -g jslint
+# if that does not work install the following
+#sudo apt-get install nodejs-legacy
+```
+Add the following to your vimrc
+```bash
+let g:syntastic_javascript_checkers = ['eslint']
+```
+
+For python:
+```bash
 # this is for python
 sudo apt-get install pyflakes
 ```

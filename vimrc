@@ -240,7 +240,7 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 " nodejs
-let g:syntastic_javascript_checkers = ['jslint']
+let g:syntastic_javascript_checkers = ['eslint']
 " python: sudo apt-get install pyflakes
 let g:syntastic_python_checkers=['pyflakes']
 
