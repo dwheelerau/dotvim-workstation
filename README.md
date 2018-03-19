@@ -1,4 +1,10 @@
 ## My vimrc file
+
+### Instuctions  
+Install vundle using the following instructions ```https://github.com/VundleVim/Vundle.vim```
+
+You only need to goto step 2, below we will use my vimrc file so no need to follow those instructions.  
+
 ### Instuctions  
 From your home directory clone the repo:  
 ```bash
@@ -9,7 +15,6 @@ Symlink your vimrc to this repo
 ```bash
 ln -s /home/dwheeler/dotvim/vimrc ~/.vimrc
 ```  
-
 ### Install plugins using plug  
 Follow the instructions at this webpage:  
 https://github.com/junegunn/vim-plug  
