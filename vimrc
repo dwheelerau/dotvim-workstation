@@ -27,6 +27,15 @@ Plug 'tpope/vim-fugitive'
 " ctrlP to super search https://github.com/kien/ctrlp.vim
 Plug 'ctrlpvim/ctrlp.vim'
 
+" html and css styling <c-y>,
+" command is hold ctrl y (ie <c-y>) then , (ie comma)
+" type y then ctrl y , will nest <p></p>
+" type html:5 then c-y, will give you the header block
+" visual then c-y, then type ul>li* and this will nest ul and li tags
+" c-ya will add <a to http://www... addresses
+" c-y/ will comment out a block
+Plug 'mattn/emmet-vim'
+
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
@@ -207,11 +216,7 @@ set softtabstop=4
 set shiftwidth=4
 set shiftround
 set expandtab
-
-" " Use tab = 2 for html
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-
-" " Use tab = 2 for shell scripts
+" " Use tab = 2 for html autocmd FileType html setlocal shiftwidth=2 tabstop=2 " " Use tab = 2 for shell scripts
 autocmd FileType sh setlocal shiftwidth=2 tabstop=2
 
 " " Make search case insensitive
@@ -254,3 +259,5 @@ let g:ctrlp_working_path_mode = 'ra'
 "
 " " settings for nerdtree use Ctrl n
 map <C-n> :NERDTreeToggle<CR>
+" get this to work with anaconda this is 2.7
+"let g:ycm_path_to_python_interpreter = '/usr/bin/python3.5'
