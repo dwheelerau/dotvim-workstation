@@ -34,6 +34,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 " visual then c-y, then type ul>li* and this will nest ul and li tags
 " c-ya will add <a to http://www... addresses
 " c-y/ will comment out a block
+" https://raw.githubusercontent.com/mattn/emmet-vim/master/TUTORIAL
 Plug 'mattn/emmet-vim'
 
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
