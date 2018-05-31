@@ -80,6 +80,12 @@ Create `~/.tern-config` containing the following
 }
 ```
 
+## For javascript you need to install the node etc, see YCM instructions  
+Also you need a .tern-project in your current directory of the JS project or an
+ancestor. This repo contains that file, I just symlink it to ~ so it should be
+work with any local project from your home directory.  
+``` ln -s ~/dotvim/tern-project ~/.tern-project```
+
 ### Then clone the dottmux repo to get tmux integration working  
 
 ```bash
