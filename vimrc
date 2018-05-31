@@ -217,8 +217,12 @@ set softtabstop=4
 set shiftwidth=4
 set shiftround
 set expandtab
-" " Use tab = 2 for html autocmd FileType html setlocal shiftwidth=2 tabstop=2 " " Use tab = 2 for shell scripts
+
+" " settings for other languages
 autocmd FileType sh setlocal shiftwidth=2 tabstop=2
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
+autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
+autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
 
 " " Make search case insensitive
 set hlsearch
