@@ -30,7 +30,7 @@ Some of the plugins may require compilation, namely YCM.
 see: https://github.com/Valloric/YouCompleteMe  
 ```bash
 cd ~/.vim/plugged/YouCompleteMe/
-# for go and jscript
+# for go and jscript (see additional details near end)  
 ./install.py  --gocode-completer --tern-completer
 ```
 This should compile.
@@ -62,10 +62,16 @@ For python:
 ```bash
 # this is for python
 sudo apt-get install pyflakes
-```
-**For javascript highlighting.**  
 
-Create `~/.tern-config` containing the following  
+## Javascrpt stuff  
+
+## For javascript you need to install the node etc, see YCM instructions  
+Also you need a .tern-project in your current directory of the JS project or an
+ancestor. This repo contains that file, I just symlink it to ~ so it should be
+work with any local project from your home directory.  
+``` ln -s ~/dotvim/tern-project ~/.tern-project```
+
+this file looks something like this (maybe different), just use the repo
 ```bash
 {
   "plugins": {
@@ -78,13 +84,12 @@ Create `~/.tern-config` containing the following
   ],
   "ecmaVersion": 6
 }
-```
 
-## For javascript you need to install the node etc, see YCM instructions  
-Also you need a .tern-project in your current directory of the JS project or an
-ancestor. This repo contains that file, I just symlink it to ~ so it should be
-work with any local project from your home directory.  
-``` ln -s ~/dotvim/tern-project ~/.tern-project```
+For syntax highlighting you might need to do  
+```ln -s eslintrc.js ~/.eslintrc.js```
+
+If you have problems you might need to run
+```eslint --init``` and follow the instructions. 
 
 ### Then clone the dottmux repo to get tmux integration working  
 
