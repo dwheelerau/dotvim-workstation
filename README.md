@@ -86,8 +86,10 @@ this file looks something like this (maybe different), just use the repo
   "ecmaVersion": 6
 }
 ```
-For syntax highlighting you might need to do  
-```ln -s eslintrc.js ~/.eslintrc.js```
+For syntax highlighting you need a rc file for eslint, this file can contain
+some key settings, see the good online docs for turning off specific syntax
+restrictions. Best to use the file in this repo.   
+```ln -s ~/dotvim/eslintrc.js ~/.eslintrc.js```
 
 If you have problems you might need to run
 ```eslint --init``` and follow the instructions. 
