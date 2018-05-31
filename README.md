@@ -85,7 +85,7 @@ this file looks something like this (maybe different), just use the repo
   ],
   "ecmaVersion": 6
 }
-
+```
 For syntax highlighting you might need to do  
 ```ln -s eslintrc.js ~/.eslintrc.js```
 
