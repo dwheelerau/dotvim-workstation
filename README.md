@@ -62,6 +62,7 @@ For python:
 ```bash
 # this is for python
 sudo apt-get install pyflakes
+```
 
 ## Javascrpt stuff  
 
