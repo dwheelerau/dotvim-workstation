@@ -37,6 +37,12 @@ Plug 'ctrlpvim/ctrlp.vim'
 " https://raw.githubusercontent.com/mattn/emmet-vim/master/TUTORIAL
 Plug 'mattn/emmet-vim'
 
+Plug 'terryma/vim-multiple-cursors'
+
+
+" syntax etc
+Plug 'sheerun/vim-polyglot'
+
 Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
@@ -76,6 +82,12 @@ Plug 'christoomey/vim-tmux-navigator'
 
 " bash commands in vim using tmux
 Plug 'benmills/vimux'
+
+" Pandoc md compilers and syntax
+" :Pandoc -s -o test.doc
+" :Pandoc latex -o test.pdf
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
 " All of your Plugins must be added before the following line
 " call vundle#end()            " required
@@ -219,10 +231,10 @@ set shiftround
 set expandtab
 
 " " settings for other languages
-autocmd FileType sh setlocal shiftwidth=2 tabstop=2
+autocmd Filetype sh setlocal shiftwidth=2 tabstop=2
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 autocmd Filetype ruby setlocal ts=2 sts=2 sw=2
-autocmd Filetype javascript setlocal ts=4 sts=4 sw=4
+autocmd Filetype javascript setlocal ts=2 sts=2 sw=2
 
 " " Make search case insensitive
 set hlsearch
@@ -262,6 +274,9 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 let g:ctrlp_working_path_mode = 'ra'
 "
+" fix tmux issues with arrows
+map <Esc>[B <Down>
+
 " " settings for nerdtree use Ctrl n
 map <C-n> :NERDTreeToggle<CR>
 " get this to work with anaconda this is 2.7
