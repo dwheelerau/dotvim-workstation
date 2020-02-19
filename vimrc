@@ -281,3 +281,5 @@ map <Esc>[B <Down>
 map <C-n> :NERDTreeToggle<CR>
 " get this to work with anaconda this is 2.7
 "let g:ycm_path_to_python_interpreter = '/usr/bin/python3.5'
+" tag completion using ,/ in insert mode
+imap ,/ </<C-X><C-O><Esc>F<i
