@@ -7,5 +7,6 @@ module.exports = {
     "rules": {
         "no-var": 0,
         "quotes": "off",
+	"semi": "off",
     }
 };
