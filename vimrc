@@ -283,3 +283,6 @@ map <C-n> :NERDTreeToggle<CR>
 "let g:ycm_path_to_python_interpreter = '/usr/bin/python3.5'
 " tag completion using ,/ in insert mode
 imap ,/ </<C-X><C-O><Esc>F<i
+
+" auto bracket completion
+inoremap { {<CR>}<Esc>ko
