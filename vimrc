@@ -207,3 +207,22 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " remap leader to comma
 let mapleader=","
+" line number
+set number
+
+" vim-zettel specific mappings 
+" inoremap [[ [[<esc>:ZettelSearch<CR>
+imap <silent> [[ [[<esc><Plug>ZettelSearchMap
+" T in normal to yank current note link and insert in other note
+nmap T <Plug>ZettelYankNameMap
+" You can create a new note with the selected text as the note title by typing z.
+" xnoremap z :call zettel#vimwiki#zettel_new_selected()<CR>
+xmap z <Plug>ZettelNewSelectedMap
+" note ID format used by Vim-Zettel to name new notes
+let g:zettel_format = '%Y%m%d%H%M%S'
+" search tags with <leader>vt
+nnoremap <leader>vt :VimwikiSearchTags<space>
+" search all text with <leader>vs
+nnoremap <leader>vs :VimwikiSearch<space>
+" update tag index use :lnext to move through
+nnoremap <leader>gt :VimwikiRebuildTags!<cr>:VimwikiGenerateTagLinks<cr><c-l>
