@@ -35,14 +35,14 @@ the `plug.vim` repo.
 
 4. Some packages may require manual compiling outside of vim (see below).  
 
-## Packages that require additional work.  
+## Extra instructions for Packages  
 
 ### coc-vim for autocompletion  
 See instructions here: https://github.com/neoclide/coc.nvim 
 
 Note requires node.js  
 
-Use ctl-p in insert mode to scroll options and ctl-n (down) and ctl-p (up) to
+Use **ctl-p** in insert mode to scroll options and **ctl-n** (down) and **ctl-p** (up) to
 move through the options.  
 
 ### coc-pyright  
@@ -51,4 +51,23 @@ Python autocomplete for python3: https://github.com/fannheyward/coc-pyright
 Note that I have not set this up for conda, see instructions below, I haven't
 worked out how to modify the coc-settings json file to make this work.  
 
-That is it for now.  
+See the coc short cuts above.  
+
+### The vim-zettal plugin for zettelkasten method of note taking  
+See https://github.com/michal-h21/vim-zettel.  
+
+The method creates a network of ideas. The rules for this method are:  
+1. Write down the idea in your own words  
+2. Record all knowledge, more ideas create more links
+3. Think through each idea and reduce it to its kernal
+4. Link up kernals with other ideas
+
+Typically you want the title of the idea to summarise it, this makes it easy to link the ideas latter.  
+
+I'm not sure if you should have multiple libraries ie work, home etc, or consider all the ideas interlinked, I think the former.  
+
+The shortcuts are:  
+```
+
+
+```
