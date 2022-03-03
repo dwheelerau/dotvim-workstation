@@ -1,102 +1,54 @@
-## My vimrc file
+# My vimrc file
+## If starting fresh you need to sinstall the vim-plug  
+Instructions are here: `https://github.com/junegunn/vim-plug`.  
 
-### Instuctions  
-Install vundle using the following instructions ```https://github.com/VundleVim/Vundle.vim```
-
-You only need to goto step 2, below we will use my vimrc file so no need to follow those instructions.  
-
-### Instuctions  
-From your home directory clone the repo:  
-```bash
-git clone https://github.com/dwheelerau/dotvim.git
-```  
-
-Symlink your vimrc to this repo  
-```bash
-ln -s /home/dwheeler/dotvim/vimrc ~/.vimrc
-```  
-### Install plugins using plug  
-Follow the instructions at this webpage:  
-https://github.com/junegunn/vim-plug  
-but basically..  
-```bash
+But basically.  
+```bash  
+# downloads plug.vim and puts it in .vim/autoload/ creats dirs on fly
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-Open vim and use `:PlugInstall`  
+Now you are ready to use the shared vimrc file via your dotvim  
 
-Some of the plugins may require compilation, namely YCM.  
-see: https://github.com/Valloric/YouCompleteMe  
-```bash
-cd ~/.vim/plugged/YouCompleteMe/
-# for go and jscript (see additional details near end)  
-./install.py  --gocode-completer --tern-completer
-```
-This should compile.
+## linking up the shared vimrc on a new computer  
+After installing `plug-vim` all you to do is clone the repo and symlink the
+vimrc file in the repo to a .vimrc file in your home directory.  
 
-### Syntastic support for jscript and python  
-*This is painful*, I needed up using eslint, but this req upgrade node.  
- 
-```bash
-sudo apt-get install npm
-sudo npm install n -g
-sudo n latest
-sudo npm install -g eslint
-sudo npm install -g eslint-config-google
-#then run and follow instructions, chose popular style (google) and json formt)
-sudo eslint --init
+That way if you update the repo and pull your link should automatically update
+your environment on this computer.  
 
-#sudo apt-get install nodejs
-# try jslint from command line
-#sudo npm install -g jslint
-# if that does not work install the following
-#sudo apt-get install nodejs-legacy
-```
-Add the following to your vimrc
-```bash
-let g:syntastic_javascript_checkers = ['eslint']
-```
+```bash  
+# clone the repo to your home directory  
+git clone https://github.com/dwheelerau/dotvim.git
+# Symlink your vimrc to this repo Note: if you moved the dir change the path 
+ln -s /home/dwheeler/dotvim/vimrc ~/.vimrc
+```  
 
-For python:
-```bash
-# this is for python
-sudo apt-get install pyflakes
-```
+## Starting from scratch with the `plug.vim` demo `.vimrc`.  
+1. Copy or overwrite the vimrc file in the git repo with the example vimrc from
+the `plug.vim` repo.
 
-## Javascrpt stuff  
+2. Delete the plugins that you do not need.  
 
-## For javascript you need to install the node etc, see YCM instructions  
-Also you need a .tern-project in your current directory of the JS project or an
-ancestor. This repo contains that file, I just symlink it to ~ so it should be
-work with any local project from your home directory.  
-``` ln -s ~/dotvim/tern-project ~/.tern-project```
+3. Open vim and call `PlugInstall` to install the plugins listed in the vimrc.  
 
-this file looks something like this (maybe different), just use the repo
-```bash
-{
-  "plugins": {
-    "node": {},
-    "es_modules": {}
-  },
-  "libs": [
-    "ecma5",
-    "ecma6"
-  ],
-  "ecmaVersion": 6
-}
-```
-For syntax highlighting you need a rc file for eslint, this file can contain
-some key settings, see the good online docs for turning off specific syntax
-restrictions. Best to use the file in this repo.   
-```ln -s ~/dotvim/eslintrc.js ~/.eslintrc.js```
+4. Some packages may require manual compiling outside of vim (see below).  
 
-If you have problems you might need to run
-```eslint --init``` and follow the instructions. 
+## Packages that require additional work.  
 
-### Then clone the dottmux repo to get tmux integration working  
+### coc-vim for autocompletion  
+See instructions here: https://github.com/neoclide/coc.nvim 
 
-```bash
-git clone https://github.com/dwheelerau/dottmux
-ln -s /home/dwheeler/dottmux/tmux.conf ~/.tmux.conf
-```
+Note requires node.js  
+
+Use ctl-p in insert mode to scroll options and ctl-n (down) and ctl-p (up) to
+move through the options.  
+
+### coc-pyright  
+Python autocomplete for python3: https://github.com/fannheyward/coc-pyright  
+
+Note that I have not set this up for conda, see instructions below, I haven't
+worked out how to modify the coc-settings json file to make this work.  
+
+That is it for now.  
