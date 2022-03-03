@@ -66,8 +66,22 @@ Typically you want the title of the idea to summarise it, this makes it easy to 
 
 I'm not sure if you should have multiple libraries ie work, home etc, or consider all the ideas interlinked, I think the former.  
 
-The shortcuts are:  
+I don't yet understand all the short cuts. This plugin is based on `vimwiki`, which stores the notes in a folder called `~/vimwiki/`, each note is a file named after the link. You can link notes together by linking to the file of the note that you want to reference. Apparently you are meant to be able to search but I can't workout how. This would be good to link up notes via searching for the topics or tags that can also be added to notes.  
+
+The shortcuts are (work in progress):   
 ```
+from http://vimwiki.github.io/
 
+    <Leader>ww – Open the default wiki index file
+    <Leader>ws – Select and open wiki index file
+    <Enter> – Follow/Create wiki link
+    <Backspace> – Go back to parent(previous) wiki link
+    <Tab> – Find next wiki link
+    <Shift-Tab> – Find previous wiki link
 
+# to link a note (ie link to the note file
+[[./filename]]
+
+# not sure what the ones for vim-zettel are yet?
+# ToDo
 ```
