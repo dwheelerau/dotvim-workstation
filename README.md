@@ -53,6 +53,10 @@ worked out how to modify the coc-settings json file to make this work.
 
 See the coc short cuts above.  
 
+1. press enter to compete with the current top suggestion
+2. press <ctl>n to scroll through options, enter to confirm
+2. press <ctl>p to scroll back through options, enter to confirm
+
 ### The vim-zettal plugin for zettelkasten method of note taking  
 See https://github.com/michal-h21/vim-zettel.  
 
