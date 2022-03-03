@@ -210,6 +210,10 @@ let mapleader=","
 " line number
 set number
 
+" use F5 to print the date
+nnoremap <F5> "=strftime("%c")<CR>P
+inoremap <F5> <C-R>=strftime("%c")<CR>
+
 " vim-zettel specific mappings 
 " inoremap [[ [[<esc>:ZettelSearch<CR>
 imap <silent> [[ [[<esc><Plug>ZettelSearchMap

@@ -99,9 +99,11 @@ from http://vimwiki.github.io/
 just type "[[" will bring up a list of files etc, select hit enter
 # in normal mode after you save a note you can get a link by using "T", then paste it
 # and it automatically inserts the link to that file (have to save it first)
+
 You can create a new note with the selected text as the note title by typing z.
 " xnoremap z :call zettel#vimwiki#zettel_new_selected()<CR>
 xmap z <Plug>ZettelNewSelectedMap
+
 # titles and date MD at top of note
 %title this is a title
 %date
