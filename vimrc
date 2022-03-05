@@ -230,3 +230,12 @@ nnoremap <leader>vt :VimwikiSearchTags<space>
 nnoremap <leader>vs :VimwikiSearch<space>
 " update tag index use :lnext to move through
 nnoremap <leader>gt :VimwikiRebuildTags!<cr>:VimwikiGenerateTagLinks<cr><c-l>
+
+" vimwiki wikis
+let wiki_1 = {}
+let wiki_1.path = '~/vimwiki/'
+let wiki_1.path_html = '~/vimwiki_html/'
+let wiki_2 = {}
+let wiki_2.path = '~/vimwiki/zettelkasten/'
+let wiki_2.path_html = '~/vimwiki/zettelkasten_html/'
+let g:vimwiki_list = [wiki_1, wiki_2]
