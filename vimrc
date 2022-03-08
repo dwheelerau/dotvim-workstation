@@ -211,6 +211,9 @@ let mapleader=","
 set number
 colorscheme elflord
 
+" Mouse and backspace
+set mouse=a 
+set bs=2   
 
 " use F5 to print the date
 nnoremap <F5> "=strftime("%c")<CR>P
