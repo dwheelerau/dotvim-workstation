@@ -209,6 +209,8 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 let mapleader=","
 " line number
 set number
+colorscheme elflord
+
 
 " use F5 to print the date
 nnoremap <F5> "=strftime("%c")<CR>P
