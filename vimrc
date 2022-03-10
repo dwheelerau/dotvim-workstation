@@ -33,6 +33,9 @@ Plug 'michal-h21/vim-zettel'
 " coc auto completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" sync git repo
+Plug 'michal-h21/vimwiki-sync'
+
 " Initialize plugin system
 call plug#end()
 
@@ -211,9 +214,18 @@ let mapleader=","
 set number
 colorscheme elflord
 
+" spell check highlighting color
+hi clear SpellBad
+hi SpellBad cterm=underline
+" Set style for gVim
+hi SpellBad gui=undercurl
+
 " Mouse and backspace
 set mouse=a 
 set bs=2   
+
+" spell checking
+set spell spelllang=en_au
 
 " use F5 to print the date
 nnoremap <F5> "=strftime("%c")<CR>P
@@ -244,3 +256,6 @@ let wiki_2 = {}
 let wiki_2.path = '~/vimwiki/zettelkasten/'
 let wiki_2.path_html = '~/vimwiki/zettelkasten_html/'
 let g:vimwiki_list = [wiki_1, wiki_2]
+let g:vimwiki_listsyms = '✗○◐●✓'
+" set vimwiki files for auto git commit
+let g:vimwiki_list = [{'path':'$HOME/vimwiki'}]

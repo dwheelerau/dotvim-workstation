@@ -1,4 +1,4 @@
-# My vimrc file
+# My vimrc file  
 ## If starting fresh you need to sinstall the vim-plug  
 Instructions are here: `https://github.com/junegunn/vim-plug`.  
 
