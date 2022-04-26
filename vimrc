@@ -256,6 +256,8 @@ let wiki_2 = {}
 let wiki_2.path = '~/vimwiki/zettelkasten/'
 let wiki_2.path_html = '~/vimwiki/zettelkasten_html/'
 let g:vimwiki_list = [wiki_1, wiki_2]
+
+" tick marks for completion status
 let g:vimwiki_listsyms = '✗○◐●✓'
-" set vimwiki files for auto git commit
-let g:vimwiki_list = [{'path':'$HOME/vimwiki'}]
+
+call vimwiki#vars#init()
