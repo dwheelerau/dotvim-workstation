@@ -25,16 +25,10 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 " Plugin outside ~/.vim/plugged with post-update hook
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
-" plugins for zettelkasten note taking method
-Plug 'vimwiki/vimwiki'
-Plug 'junegunn/fzf.vim'
-Plug 'michal-h21/vim-zettel'
-
 " coc auto completion
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-" sync git repo
-Plug 'michal-h21/vimwiki-sync'
+" copilot
 
 " Initialize plugin system
 call plug#end()
@@ -230,34 +224,3 @@ set spell spelllang=en_au
 " use F5 to print the date
 nnoremap <F5> "=strftime("%c")<CR>P
 inoremap <F5> <C-R>=strftime("%c")<CR>
-
-" vim-zettel specific mappings 
-" inoremap [[ [[<esc>:ZettelSearch<CR>
-imap <silent> [[ [[<esc><Plug>ZettelSearchMap
-" T in normal to yank current note link and insert in other note
-nmap T <Plug>ZettelYankNameMap
-" You can create a new note with the selected text as the note title by typing z.
-" xnoremap z :call zettel#vimwiki#zettel_new_selected()<CR>
-xmap z <Plug>ZettelNewSelectedMap
-" note ID format used by Vim-Zettel to name new notes
-let g:zettel_format = '%Y%m%d%H%M%S'
-" search tags with <leader>vt
-nnoremap <leader>vt :VimwikiSearchTags<space>
-" search all text with <leader>vs
-nnoremap <leader>vs :VimwikiSearch<space>
-" update tag index use :lnext to move through
-nnoremap <leader>gt :VimwikiRebuildTags!<cr>:VimwikiGenerateTagLinks<cr><c-l>
-
-" vimwiki wikis
-let wiki_1 = {}
-let wiki_1.path = '~/vimwiki/'
-let wiki_1.path_html = '~/vimwiki_html/'
-let wiki_2 = {}
-let wiki_2.path = '~/vimwiki/zettelkasten/'
-let wiki_2.path_html = '~/vimwiki/zettelkasten_html/'
-let g:vimwiki_list = [wiki_1, wiki_2]
-
-" tick marks for completion status
-let g:vimwiki_listsyms = '✗○◐●✓'
-
-call vimwiki#vars#init()
