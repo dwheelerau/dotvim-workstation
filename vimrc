@@ -29,6 +29,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " copilot
+Plug 'github/copilot.vim'
 
 " Initialize plugin system
 call plug#end()
